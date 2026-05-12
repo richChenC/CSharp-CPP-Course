@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Current C++ File For Debug",
+      "type": "process",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$outputDir = 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\cpp-run'; New-Item -ItemType Directory -Force -Path $outputDir | Out-Null; & 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin\\g++.exe' '-B' 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin' '-std=c++17' '-g' '-Wall' '-Wextra' '-Wpedantic' '-fdebug-prefix-map=${workspaceFolder}=C:/cpp_course' '${file}' '-o' (Join-Path $outputDir 'current.exe')"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "LANG": "en_US.UTF-8",
+          "PATH": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin;${env:PATH}"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}

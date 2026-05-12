@@ -1,0 +1,10 @@
+{
+  "C_Cpp.default.compilerPath": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin\\g++.exe",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.cStandard": "c17",
+  "C_Cpp.default.intelliSenseMode": "windows-gcc-x64",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.env.windows": {
+    "PATH": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin;${env:PATH}"
+  }
+}

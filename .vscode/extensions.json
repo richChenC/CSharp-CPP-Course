@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "ms-vscode.cpptools",
+    "ms-dotnettools.csdevkit",
+    "ms-dotnettools.csharp"
+  ],
+  "unwantedRecommendations": [
+    "franneck94.c-cpp-runner",
+    "danielpinto8zz6.c-cpp-compile-run"
+  ]
+}

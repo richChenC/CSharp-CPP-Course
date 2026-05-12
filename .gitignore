@@ -1,0 +1,20 @@
+.vs/
+.vscode/*.log
+.cache/
+.sixth/
+bin/
+obj/
+packages/
+
+# C++ build outputs
+**/build/
+**/output/
+*.exe
+*.obj
+*.o
+*.pdb
+*.ilk
+
+# Local tools and temp files
+Thumbs.db
+Desktop.ini

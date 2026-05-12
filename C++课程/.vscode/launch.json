@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Current C++ File",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\cpp-run\\current.exe",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\cpp-run",
+      "externalConsole": false,
+      "preLaunchTask": "Build Current C++ File For Debug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin\\gdb.exe",
+      "environment": [
+        {
+          "name": "LANG",
+          "value": "en_US.UTF-8"
+        },
+        {
+          "name": "PATH",
+          "value": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin;${env:PATH}"
+        }
+      ],
+      "setupCommands": [
+        {
+          "description": "Set GDB character set to UTF-8",
+          "text": "set charset UTF-8",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set target character set to UTF-8",
+          "text": "set target-charset UTF-8",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Add workspace directory for source file search",
+          "text": "directory ${workspaceFolder}",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "sourceMap": {
+        "C:/cpp_course": "${workspaceFolder}"
+      }
+    }
+  ]
+}

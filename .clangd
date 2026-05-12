@@ -1,0 +1,4 @@
+CompileFlags:
+  Compiler: C:/Users/Administrator/Documents/Codex/2026-05-08/c-c-c/.tools/w64devkit/bin/g++.exe
+  Add:
+    - -std=c++17
