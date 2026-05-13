@@ -16,5 +16,7 @@ packages/
 *.ilk
 
 # Local tools and temp files
+.tools/
+.course_build_verify/
 Thumbs.db
 Desktop.ini

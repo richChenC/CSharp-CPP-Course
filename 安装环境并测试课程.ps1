@@ -6,24 +6,29 @@ $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 
 $CourseRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$WorkspaceRoot = Split-Path -Parent $CourseRoot
-$Tools = Join-Path $WorkspaceRoot '.tools'
+$Tools = Join-Path $CourseRoot '.tools'
 $DotnetDir = Join-Path $Tools 'dotnet'
 $DotnetExe = Join-Path $DotnetDir 'dotnet.exe'
 $W64Exe = Join-Path $Tools 'w64devkit-x64-2.5.0.7z.exe'
 $SevenZipExe = Join-Path $Tools '7zr.exe'
 $GppExe = ''
 $Report = Join-Path $CourseRoot '真实编译测试报告.md'
-$TempRoot = Join-Path $WorkspaceRoot '.course_build_verify'
+$TempRoot = Join-Path $CourseRoot '.course_build_verify'
 $DotnetHome = Join-Path $Tools '.dotnet-home'
+$AppDataDir = Join-Path $Tools 'appdata'
+$NuGetPackages = Join-Path $Tools 'nuget-packages'
 
 New-Item -ItemType Directory -Force -Path $Tools | Out-Null
 New-Item -ItemType Directory -Force -Path $TempRoot | Out-Null
 New-Item -ItemType Directory -Force -Path $DotnetHome | Out-Null
+New-Item -ItemType Directory -Force -Path (Join-Path $AppDataDir 'NuGet') | Out-Null
+New-Item -ItemType Directory -Force -Path $NuGetPackages | Out-Null
 
 $env:DOTNET_CLI_HOME = $DotnetHome
 $env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = '1'
 $env:DOTNET_CLI_TELEMETRY_OPTOUT = '1'
+$env:APPDATA = $AppDataDir
+$env:NUGET_PACKAGES = $NuGetPackages
 
 if (-not $SkipInstall) {
     if (-not (Test-Path $DotnetExe)) {
