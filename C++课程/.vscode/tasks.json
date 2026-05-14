@@ -4,13 +4,13 @@
     {
       "label": "Build Current C++ File For Debug",
       "type": "process",
-      "command": "powershell",
+      "command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
       "args": [
         "-NoProfile",
         "-ExecutionPolicy",
         "Bypass",
         "-Command",
-        "$outputDir = 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\cpp-run'; New-Item -ItemType Directory -Force -Path $outputDir | Out-Null; & 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin\\g++.exe' '-B' 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin' '-std=c++17' '-g' '-Wall' '-Wextra' '-Wpedantic' '-fdebug-prefix-map=${workspaceFolder}=C:/cpp_course' '${file}' '-o' (Join-Path $outputDir 'current.exe')"
+        "$outputDir = 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\cpp-run'; New-Item -ItemType Directory -Force -Path $outputDir | Out-Null; & 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin\\g++.exe' '-B' 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin' '-std=c++17' '-g' '-Wall' '-Wextra' '-Wpedantic' '-fdebug-prefix-map=C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\C#_C++_Course=C:/cpp_course' '${file}' '-o' (Join-Path $outputDir 'current.exe')"
       ],
       "options": {
         "cwd": "${workspaceFolder}",
@@ -22,6 +22,34 @@
       "group": {
         "kind": "build",
         "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "Run Current C++ File",
+      "type": "process",
+      "command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$outputDir = 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\cpp-run'; $exe = Join-Path $outputDir 'current.exe'; New-Item -ItemType Directory -Force -Path $outputDir | Out-Null; & 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin\\g++.exe' '-B' 'C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin' '-std=c++17' '-g' '-Wall' '-Wextra' '-Wpedantic' '-fdebug-prefix-map=C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\C#_C++_Course=C:/cpp_course' '${file}' '-o' $exe; if ($LASTEXITCODE -eq 0) { & $exe }"
+      ],
+      "options": {
+        "cwd": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\cpp-run",
+        "env": {
+          "LANG": "en_US.UTF-8",
+          "PATH": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\w64devkit\\bin;${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "clear": true
       },
       "problemMatcher": [
         "$gcc"

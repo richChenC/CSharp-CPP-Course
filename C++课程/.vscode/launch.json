@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug Current C++ File",
+      "name": "COURSE_ONLY_DEBUG_CURRENT_CPP",
       "type": "cppdbg",
       "request": "launch",
       "program": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\.tools\\cpp-run\\current.exe",
@@ -35,18 +35,14 @@
           "ignoreFailures": true
         },
         {
-          "description": "Add workspace directory for source file search",
-          "text": "directory ${workspaceFolder}",
-          "ignoreFailures": true
-        },
-        {
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
         }
       ],
-      "sourceMap": {
-        "C:/cpp_course": "${workspaceFolder}"
+      "sourceFileMap": {
+        "C:/cpp_course/C++课程": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\C#_C++_Course\\C++课程",
+        "C:/cpp_course": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\c-c-c\\C#_C++_Course"
       }
     }
   ]
