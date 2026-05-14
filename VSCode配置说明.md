@@ -34,3 +34,49 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```powershell
 .\安装环境并测试课程.ps1 -SkipInstall
 ```
+## 当前推荐运行方式
+
+本课程已经配置好本地工具链：
+
+- C++ 编译器：`C:\Users\Administrator\Documents\Codex\2026-05-08\c-c-c\.tools\w64devkit\bin\g++.exe`
+- C++ 调试器：`C:\Users\Administrator\Documents\Codex\2026-05-08\c-c-c\.tools\w64devkit\bin\gdb.exe`
+- .NET SDK：`C:\Users\Administrator\Documents\Codex\2026-05-08\c-c-c\.tools\dotnet\dotnet.exe`
+
+### C++ 正确调试方式
+
+打开任意 `main.cpp` 后：
+
+1. 按 `F5`
+2. 选择 `Debug Current C++ File`
+
+不要选择 `C/C++ Runner: Debug Session`。这个配置由第三方扩展自动生成，中文路径下容易生成乱码路径。
+
+### C++ 正确编译方式
+
+打开任意 `main.cpp` 后：
+
+1. 按 `Ctrl+Shift+B`
+2. 选择 `Build Current C++ File For Debug`
+
+### 如果弹出 Compiler executable not found
+
+这是第三方 `C/C++ Compile Run` 扩展的提示。项目已经在三层 `.vscode/settings.json` 中配置好了编译器路径。
+
+如果仍然弹出，点击 `Change compiler path`，填写：
+
+```text
+C:\Users\Administrator\Documents\Codex\2026-05-08\c-c-c\.tools\w64devkit\bin\g++.exe
+```
+
+### 建议保留的扩展
+
+- `C/C++`（Microsoft 官方）
+- `C# Dev Kit`
+- `C#`
+
+### 不建议用于调试的扩展
+
+- `C/C++ Runner`
+- `C/C++ Compile Run`
+
+这两个扩展可以用于简单运行，但不要使用它们生成的 `Debug Session`。
